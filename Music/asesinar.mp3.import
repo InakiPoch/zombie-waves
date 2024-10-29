@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/asesinar.mp3-90d3ecf48d4a10c5c4fd5174bd79bd38.mp3str"
+
+[deps]
+
+source_file="res://Music/asesinar.mp3"
+dest_files=[ "res://.import/asesinar.mp3-90d3ecf48d4a10c5c4fd5174bd79bd38.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

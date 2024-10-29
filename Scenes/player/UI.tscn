@@ -1,0 +1,193 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Fonts/Baby Halloween.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/wave-counter.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/progress-bar.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/progress-bar-border.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Square.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/heart pixel art 254x254.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 604, 52 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 604, 52 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 5 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 7 )
+
+[node name="round_progress" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -302.0
+margin_top = 17.0
+margin_right = 302.0
+margin_bottom = 69.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="round_progress"]
+margin_left = 225.0
+margin_top = 51.0
+margin_right = 376.0
+margin_bottom = 91.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="round_progress/TextureRect"]
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 83.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 3 )
+text = "Wave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="round_progress/TextureRect"]
+margin_left = 94.0
+margin_top = 8.0
+margin_right = 121.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="CurrentAmmo" type="Label" parent="."]
+margin_left = 587.0
+margin_top = 537.0
+margin_right = 664.0
+margin_bottom = 585.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slash" type="Label" parent="."]
+margin_left = 668.0
+margin_top = 537.0
+margin_right = 708.0
+margin_bottom = 585.0
+custom_fonts/font = SubResource( 5 )
+text = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxAmmo" type="Label" parent="."]
+margin_left = 701.0
+margin_top = 536.0
+margin_right = 792.0
+margin_bottom = 584.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinLabel" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 277.0
+margin_top = 132.0
+margin_right = 518.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 6 )
+text = "WAVE 0 COMPLETED"
+
+[node name="WaveGuide" type="Label" parent="."]
+margin_left = 203.0
+margin_top = 132.0
+margin_right = 590.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 6 )
+text = "PRESS ENTER TO START WAVE"
+
+[node name="Pistol" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 454.0
+margin_right = 91.0
+margin_bottom = 472.0
+custom_fonts/font = SubResource( 7 )
+text = "1 - Pistol"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SMG" type="Label" parent="."]
+margin_left = 19.0
+margin_top = 476.0
+margin_right = 74.0
+margin_bottom = 494.0
+custom_fonts/font = SubResource( 7 )
+text = "2 - SMG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shotgun" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 498.0
+margin_right = 113.0
+margin_bottom = 516.0
+custom_fonts/font = SubResource( 7 )
+text = "3 - Shotgun"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="HBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 537.0
+margin_right = 286.0
+margin_bottom = 586.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TextureRect" parent="Vida"]
+margin_right = 49.0
+margin_bottom = 49.0
+texture = ExtResource( 6 )
+
+[node name="2" type="TextureRect" parent="Vida"]
+margin_left = 53.0
+margin_right = 102.0
+margin_bottom = 49.0
+texture = ExtResource( 6 )
+
+[node name="3" type="TextureRect" parent="Vida"]
+margin_left = 106.0
+margin_right = 155.0
+margin_bottom = 49.0
+texture = ExtResource( 6 )
+
+[node name="4" type="TextureRect" parent="Vida"]
+margin_left = 159.0
+margin_right = 208.0
+margin_bottom = 49.0
+texture = ExtResource( 6 )
+
+[node name="5" type="TextureRect" parent="Vida"]
+margin_left = 212.0
+margin_right = 261.0
+margin_bottom = 49.0
+texture = ExtResource( 6 )

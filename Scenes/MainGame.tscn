@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/MainGame.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/player/UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/MAP_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Music/asesinar.mp3" type="AudioStream" id=5]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -192.0, 927.0 ],
+"_edit_vertical_guides_": [ -251.0, 990.0 ]
+}
+
+[node name="MAP_1" parent="." instance=ExtResource( 4 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 402, 300 )
+current = true
+limit_left = -251
+limit_top = -192
+limit_right = 990
+limit_bottom = 927
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 394, 280 )
+
+[node name="UI" parent="." instance=ExtResource( 3 )]
+
+[node name="ENEMIES" type="Node" parent="."]
+
+[node name="spawnTimer" type="Timer" parent="ENEMIES"]
+wait_time = 0.5
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[connection signal="timeout" from="ENEMIES/spawnTimer" to="." method="_on_spawnTimer_timeout"]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Sprites/PISTOLA/Pistolader.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/player/Movement.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/weapons/Weapon3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/player/Action.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/weapons/Weapon1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/weapons/WeaponManager.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/weapons/Weapon2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/PISTOLA/Pistolaizq.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/RIFLE/riflepaso.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/ESCOPETA/escopetapaso.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/RIFLE/rifleneutro.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/ESCOPETA/escopetaneutro.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/PISTOLA/Pistolaneutro.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Pistol",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Shotgun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Rifle_Still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Rifle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Pistol_Still",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Shotgun_Still",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 23.0217
+
+[node name="Player" type="KinematicBody2D" groups=["player"]]
+position = Vector2( 12, -1 )
+collision_mask = 3
+script = ExtResource( 2 )
+speed = 300
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 15, 0 )
+frames = SubResource( 1 )
+animation = "Pistol"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 2 )
+shape = SubResource( 2 )
+
+[node name="Controls" type="Node" parent="."]
+
+[node name="Movement" type="Node" parent="Controls"]
+script = ExtResource( 3 )
+
+[node name="Action" type="Node" parent="Controls"]
+script = ExtResource( 5 )
+
+[node name="WeaponManager" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="w1" parent="WeaponManager" instance=ExtResource( 6 )]
+position = Vector2( 35, 0 )
+
+[node name="w2" parent="WeaponManager" instance=ExtResource( 8 )]
+position = Vector2( 28, 0 )
+
+[node name="w3" parent="WeaponManager" instance=ExtResource( 4 )]
+position = Vector2( 24, 0 )
+fire_rate = 1.5

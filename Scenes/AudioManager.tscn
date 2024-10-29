@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=1]
+[ext_resource path="res://Music/SFX/Pickup.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Music/SFX/Zombie Death.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Music/SFX/Zombie Sound.mp3" type="AudioStream" id=4]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 10.0
+
+[node name="ZombieDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="ZombieSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0

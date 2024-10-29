@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jam.mp3-eaa4b10628032ea881081b2fcedb4715.mp3str"
+
+[deps]
+
+source_file="res://Sprites/jam.mp3"
+dest_files=[ "res://.import/jam.mp3-eaa4b10628032ea881081b2fcedb4715.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
