@@ -1,6 +1,6 @@
 # Zombie Waves
 
-A small game created for a Halloween Jame in collaboration with members of the Game Development Club from the National University of Tucuman (UNT). Created with Godot 3.4.
+A small game created for a Halloween Jam in collaboration with members of the Game Development Club from the National University of Tucuman (UNT). Created with Godot 3.4.
 
 ## About
 
