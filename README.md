@@ -6,13 +6,13 @@ A small game created for a Halloween Jame in collaboration with members of the G
 
 Simple game consisting of infinite waves of zombies.
 
-Main character has 3 weapons
+Main character has 3 weapons.
 
 * Pistol
 * SMG
 * Shotgun
 
-Each wave the amount of enemies slained required increases. Enemies can drop ammo
+Each wave the amount of enemies slained required increases. Enemies can drop ammo.
 
 ## Building Steps
 * Clone repository
